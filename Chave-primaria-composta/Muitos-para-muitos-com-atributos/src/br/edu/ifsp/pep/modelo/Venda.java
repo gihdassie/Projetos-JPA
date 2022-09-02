@@ -4,6 +4,7 @@ package br.edu.ifsp.pep.modelo;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Venda implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date data;
     
-    @OneToMany(mappedBy = "venda")
+    @OneToMany(mappedBy = "venda",cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private List<Itens>itens;
 
     public Venda() {

@@ -30,8 +30,8 @@ public class Produto implements Serializable{
     @Column(name = "quantidade", nullable = false)
     private int quantidade;
     
-    @OneToMany(mappedBy = "produto")
-    private List<Itens>itens;
+//    @OneToMany(mappedBy = "produto")
+//    private List<Itens>itens;
 
     public Produto() {
     }
@@ -47,6 +47,11 @@ public class Produto implements Serializable{
     
     public int getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" + "id=" + id + ", descricao=" + descricao + ", preco=" + preco + ", quantidade=" + quantidade +'}';
     }
 
     public void setId(int id) {
@@ -77,13 +82,13 @@ public class Produto implements Serializable{
         this.quantidade = quantidade;
     }
 
-    public List<Itens> getItens() {
-        return itens;
-    }
-
-    public void setItens(List<Itens> itens) {
-        this.itens = itens;
-    }
+//    public List<Itens> getItens() {
+//        return itens;
+//    }
+//
+//    public void setItens(List<Itens> itens) {
+//        this.itens = itens;
+//    }
     
     
 
